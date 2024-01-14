@@ -1,13 +1,11 @@
 # models.py
-
-from unicodedata import category
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 from .database import Base
 
 
-class Сategory(Base):
+class Category(Base):
     __tablename__ = "category"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -46,7 +44,7 @@ class Charaster(Base):
     role = Column(String, default="unknown")
     kills = Column(Integer, default=0)
 
-    category = relationship("Сategory", backref="charaster")
+    category = relationship("Category", backref="charaster")
     allies = relationship("Ally", backref="charaster")
     enemies = relationship("Enemy", backref="charaster")
 
@@ -60,6 +58,8 @@ class Location(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     description = Column(String, default=None)
+
+    image = Column(String, default="default_images/no_image.png")
 
 
 class Weapons(Base):

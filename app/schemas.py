@@ -5,9 +5,12 @@ from pydantic.generics import GenericModel
 T = TypeVar("T")
 
 
-class CategorySchema(BaseModel):
-    id: int
+class CategoryCreateSchema(BaseModel):
     name: str
+
+
+class CategorySchema(CategoryCreateSchema):
+    id: int
 
     class Config:
         orm_mode = True

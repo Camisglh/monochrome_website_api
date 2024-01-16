@@ -16,9 +16,12 @@ class CategorySchema(CategoryCreateSchema):
         orm_mode = True
 
 
-class AllySchema(BaseModel):
-    id: int
+class AllyCreateSchema(BaseModel):
     name: str
+
+
+class AllySchema(AllyCreateSchema):
+    id: int
 
     class Config:
         orm_mode = True

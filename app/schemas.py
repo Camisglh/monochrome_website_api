@@ -27,9 +27,12 @@ class AllySchema(AllyCreateSchema):
         orm_mode = True
 
 
-class EnemySchema(BaseModel):
-    id: int
+class EnemyCreateSchema(BaseModel):
     name: str
+
+
+class EnemySchema(EnemyCreateSchema):
+    id: int
 
     class Config:
         orm_mode = True

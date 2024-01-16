@@ -24,6 +24,3 @@ async def create_location_endpoint(
     """
     _location = create_location(db, location, image)
     return _location
-
-
-#

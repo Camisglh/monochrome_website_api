@@ -55,6 +55,11 @@ class CharasterSchema(BaseModel):
         orm_mode = True
 
 
+class LocationCreateSchema(BaseModel):
+    name: str
+    description: Optional[str] = None
+
+
 class LocalSchema(BaseModel):
     id: int
     name: str

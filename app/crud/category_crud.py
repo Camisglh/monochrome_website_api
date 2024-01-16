@@ -17,3 +17,20 @@ def create_category(db: Session, category: CategoryCreateSchema):
     db.commit()
     db.refresh(_category)
     return _category
+
+
+def remote_category(db: Session, category_id: int):
+    category = db.query(Category).filter(Category.id == category_id).first()
+    if category:
+        db.delete(category)
+        db.commit()
+        return category
+    return None
+
+
+def update_category(db: Session, category_id: int, category: CategoryCreateSchema):
+    _category = db.query(Category).filter(Category.id == category_id).first()
+    _category.name = category.name
+    db.commit()
+    db.refresh(_category)
+    return _category

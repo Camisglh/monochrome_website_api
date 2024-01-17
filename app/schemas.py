@@ -70,6 +70,11 @@ class LocalSchema(BaseModel):
         orm_mode = True
 
 
+class WeaponsCreateSchema(BaseModel):
+    name: str
+    description: Optional[str] = None
+
+
 class WeaponsSchema(BaseModel):
     id: int
     name: str

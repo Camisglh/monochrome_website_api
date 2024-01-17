@@ -38,6 +38,18 @@ class EnemySchema(EnemyCreateSchema):
         orm_mode = True
 
 
+class CharasterCreateSchema(BaseModel):
+    name: str
+    quote: Optional[str] = None
+    description: Optional[str] = None
+    status: Optional[str] = None
+    role: Optional[str] = None
+    kills: Optional[int] = None
+    category: Optional[List[str]] = []
+    allies: Optional[List[str]] = []
+    enemies: Optional[List[str]] = []
+
+
 class CharasterSchema(BaseModel):
     id: int
     name: str

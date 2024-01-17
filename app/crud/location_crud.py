@@ -40,7 +40,9 @@ def update_location(db: Session, location_id: int, location: LocationCreateSchem
 
 
 def delete_location(db: Session, location_id: int):
-    _location = db.query(Location).filter(Location.id == location_id).first()
-    db.delete(_location)
-    db.commit()
-    return
+    location = db.query(Location).filter(Location.id == location_id).first()
+    if location:
+        db.delete(location)
+        db.commit()
+        return location
+    return None

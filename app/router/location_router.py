@@ -42,3 +42,11 @@ async def update_location_id_endpoint(
     if not _location:
         raise HTTPException(status_code=404, detail="Location not found")
     return _location
+
+
+@location_router.delete("/{location_id}")
+async def delete_location_id(location_id: int, db: Session = Depends(get_db)):
+    _location = delete_location(db, location_id)
+    if not _location:
+        raise HTTPException(status_code=404, detail="Location not found")
+    return _location

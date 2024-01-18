@@ -9,6 +9,8 @@ from app.router.location_router import location_router
 from app.router.weapons_router import weapons_router
 from app.router.charaster_router import charaster_router
 from app.middleware.password_check_middleware import PasswordCheckMiddleware
+from app.middleware.error_check_middleware import ErrorCheckMiddleware
+from app.middleware.validate_middleware import ValidateMiddleware
 
 # Создаем таблицы в базе данных
 Base.metadata.create_all(bind=engine)
@@ -16,6 +18,10 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 app.add_middleware(PasswordCheckMiddleware)
+
+app.add_middleware(ErrorCheckMiddleware)
+
+app.add_middleware(ValidateMiddleware)
 
 app.include_router(router, prefix="/category", tags=["category"])
 app.include_router(allyrouter, prefix="/ally", tags=["ally"])

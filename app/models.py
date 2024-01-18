@@ -37,7 +37,7 @@ class Charaster(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
-    image = Column(String, default="default_images/no_image.png")
+    image = Column(String, default="images/charaster/no_image.png")
     quote = Column(String, default=None)
     description = Column(String, default=None)
     status = Column(String, default="unknown")
@@ -59,7 +59,7 @@ class Location(Base):
     name = Column(String, index=True)
     description = Column(String, default=None)
 
-    image = Column(String, default="default_images/no_image.png")
+    image = Column(String, default="images/location/no_image.png")
 
 
 class Weapons(Base):
@@ -69,4 +69,4 @@ class Weapons(Base):
     name = Column(String, index=True)
     description = Column(String, default=None)
 
-    image = Column(String, default="default_images/no_image.png")
+    image = Column(String, default="images/weapons/no_image.png")

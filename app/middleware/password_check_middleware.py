@@ -11,7 +11,7 @@ class PasswordCheckMiddleware(BaseHTTPMiddleware):
         super().__init__(app)
 
     async def dispatch(self, request: Request, call_next):
-        load_dotenv()  # Загружаем переменные окружения из файла .env
+        load_dotenv()
         password = os.getenv("CRUD_PASSWORD")
 
         if request.method in ["POST", "PUT", "DELETE"]:

@@ -6,6 +6,7 @@ from app.router.location_router import location_router
 from app.router.weapons_router import weapons_router
 from app.router.charaster_router import charaster_router
 
+# main router
 main_router = APIRouter()
 
 main_router.include_router(router, prefix="/category", tags=["category"])

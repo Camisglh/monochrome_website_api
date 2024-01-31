@@ -5,6 +5,7 @@ from pydantic.generics import GenericModel
 T = TypeVar("T")
 
 
+# Will be completed later
 class CategoryCreateSchema(BaseModel):
     name: str
 

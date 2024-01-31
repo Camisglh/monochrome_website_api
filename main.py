@@ -8,7 +8,7 @@ from app.middleware.error_check_middleware import ErrorCheckMiddleware
 from app.middleware.validate_middleware import ValidateMiddleware
 from app.middleware.crud_check_middleware import CRUDMiddleware
 
-# Создаем таблицы в базе данных
+# Create tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
@@ -21,4 +21,5 @@ app.add_middleware(ValidateMiddleware)
 
 app.add_middleware(CRUDMiddleware)
 
+# add router
 app.include_router(main_router, prefix="/api")

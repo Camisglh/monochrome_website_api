@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import os
 
 
+# Password verification for create update and delete operations.
 class PasswordCheckMiddleware(BaseHTTPMiddleware):
     def __init__(self, app, header_name="X-CRUD-Password"):
         self.header_name = header_name

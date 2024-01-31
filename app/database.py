@@ -4,6 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 import os
 
+# Connect postgres database
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 Base = declarative_base()

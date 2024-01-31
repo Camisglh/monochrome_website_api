@@ -10,6 +10,7 @@ from app.schemas import (
 )
 
 
+# Processing input data
 class ValidateMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         if request.method in ["POST", "PUT"]:

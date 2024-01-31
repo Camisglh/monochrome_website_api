@@ -5,6 +5,7 @@ from sqlalchemy.exc import SQLAlchemyError
 import logging
 
 
+# Error handling for operations
 class ErrorCheckMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         try:
